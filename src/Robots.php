@@ -35,7 +35,6 @@ class Robots
     {
         $userAgent = $userAgent ?? $this->userAgent;
         $robotsTxt = $this->robotsTxt ?? RobotsTxt::create($this->createRobotsUrl($url));
-        dd($robotsTxt);
         return
             $robotsTxt->allows($url, $userAgent)
             && RobotsMeta::readFrom($url)->mayIndex()
